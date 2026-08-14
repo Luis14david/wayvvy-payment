@@ -20,58 +20,40 @@ formulario.addEventListener("submit", function(event) {
 
     if (valorUsuario === "" || valorPassword === "") {
 
-    mensaje.textContent = "Debe completar todos los campos";
-    mensaje.style.color = "red";
+        mensaje.textContent = "Debe completar todos los campos";
+        mensaje.style.color = "red";
 
+        if (valorUsuario === "") {
+            usuario.classList.add("input-error");
+            errorUsuario.style.display = "block";
+        }
 
-    if (valorUsuario === "") {
+        if (valorPassword === "") {
+            password.classList.add("input-error");
+            errorPassword.style.display = "block";
+        }
 
-        usuario.classList.add("input-error");
-        errorUsuario.style.display = "block";
+    } else {
 
-    }
+        const usuarioPrueba = "admin";
+        const passwordPrueba = "1234";
 
+        if (valorUsuario === usuarioPrueba && valorPassword === passwordPrueba) {
 
-    if (valorPassword === "") {
+    mensaje.textContent = "Inicio de sesión correcto";
+    mensaje.style.color = "limegreen";
 
-        password.classList.add("input-error");
-        errorPassword.style.display = "block";
+    setTimeout(function() {
+        window.location.href = "dashboard.html";
+    }, 1000);
 
-    }
+} else {
 
-}
+            mensaje.textContent = "Usuario o contraseña incorrectos";
+            mensaje.style.color = "red";
 
-});
+        }
 
-usuario.addEventListener("input", function() {
-
-    if (usuario.value.trim() !== "") {
-        usuario.classList.remove("input-error");
-        errorUsuario.style.display = "none";
-    }
-
-    if (
-        usuario.value.trim() !== "" &&
-        password.value.trim() !== ""
-    ) {
-        mensaje.textContent = "";
-    }
-
-});
-
-
-password.addEventListener("input", function() {
-
-    if (password.value.trim() !== "") {
-        password.classList.remove("input-error");
-        errorPassword.style.display = "none";
-    }
-
-    if (
-        usuario.value.trim() !== "" &&
-        password.value.trim() !== ""
-    ) {
-        mensaje.textContent = "";
     }
 
 });
