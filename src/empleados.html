@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Empleados</title>
+
+    <link rel="stylesheet" href="css/empleados.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+
+        <h2>Wayvvy Payroll</h2>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="empleados.html" class="active">Empleados</a>
+            <a href="#">Nómina</a>
+            <a href="#">Asistencia</a>
+            <a href="#">Incentivos</a>
+            <a href="#">Reportes</a>
+            <a href="#">Configuración</a>
+        </nav>
+
+    </aside>
+
+    <main class="employees-content">
+
+        <div class="employees-header">
+
+            <div>
+                <h1>Empleados</h1>
+                <p>Gestión del personal registrado en Wayvvy Payments.</p>
+            </div>
+
+            <a href="ingresoDeEmpleado.html" class="btn-new-employee">
+    <span class="plus-icon">+</span>
+    <span>Nuevo empleado</span>
+</a>
+
+        </div>
+
+
+        <div class="employees-card">
+
+            <div class="table-header">
+
+                <h2>Lista de empleados</h2>
+
+                <input
+                    type="text"
+                    placeholder="Buscar empleado..."
+                    class="employee-search"
+                >
+
+            </div>
+
+
+            <table class="employees-table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Empleado</th>
+                        <th>Cédula</th>
+                        <th>Puesto</th>
+                        <th>Fecha ingreso</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>001</td>
+                        <td>Carlos Pérez</td>
+                        <td>001-1234567-8</td>
+                        <td>Soporte</td>
+                        <td>15/01/2026</td>
+
+                        <td>
+                            <span class="status active-status">
+                                Activo
+                            </span>
+                        </td>
+
+                        <td>
+                            <button class="action-button">Ver</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
