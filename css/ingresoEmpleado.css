@@ -6,7 +6,7 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background-color: #080808;
+    background-color: #020202;
     color: white;
 
     font-family: Arial, sans-serif;
@@ -86,12 +86,53 @@ body {
     color: #666666;
 }
 
-.employee-form button {
+/* =========================
+   BOTONES DEL FORMULARIO
+========================= */
+
+.form-actions {
     grid-column: 1 / -1;
 
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding: 15px;
+    margin-top: 15px;
+}
+
+
+/* Cancelar */
+
+.btn-cancelar {
+    padding: 11px 22px;
+
+    background-color: #d93636;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #ef4444;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+
+/* Agregar empleado */
+
+.btn-agregar {
+    padding: 11px 22px;
 
     border: none;
     border-radius: 8px;
@@ -104,7 +145,7 @@ body {
 
     color: #080808;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 
     cursor: pointer;
@@ -112,12 +153,12 @@ body {
     transition: 0.3s;
 }
 
-.employee-form button:hover {
+.btn-agregar:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 0 8px #9DDB20,
-        0 0 18px rgba(40, 184, 213, 0.4);
+        0 0 16px rgba(40, 184, 213, 0.4);
 }
 
 @media (max-width: 700px) {
