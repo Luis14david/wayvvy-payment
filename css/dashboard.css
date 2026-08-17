@@ -1,0 +1,100 @@
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+}
+
+
+/* Menú lateral */
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+
+    background-color: #111111;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid #222222;
+}
+
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Opciones del menú */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.sidebar nav a {
+    color: #cccccc;
+    text-decoration: none;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.sidebar nav a:hover {
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        rgba(157, 219, 32, 0.20),
+        rgba(40, 184, 213, 0.20)
+    );
+
+    transform: translateX(5px);
+}
+
+
+/* Contenido principal */
+
+.dashboard-content {
+    flex: 1;
+
+    padding: 40px;
+}
+
+
+.dashboard-content h1 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+
+.dashboard-content p {
+    color: #aaaaaa;
+}
