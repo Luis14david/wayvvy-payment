@@ -1,0 +1,174 @@
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.topbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   PERFIL
+========================= */
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 12px;
+
+    background-color: #111111;
+    color: white;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.profile-button:hover {
+    border-color: #28B8D5;
+
+    box-shadow:
+        0 0 8px rgba(40, 184, 213, 0.25);
+}
+
+
+/* Avatar */
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: #080808;
+
+    font-weight: bold;
+}
+
+
+/* Flecha */
+
+.profile-arrow {
+    color: #888888;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   MENÚ DESPLEGABLE
+========================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 180px;
+
+    display: none;
+    flex-direction: column;
+
+    background-color: #111111;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    z-index: 1000;
+}
+
+
+/* Cuando esté abierto */
+
+.profile-dropdown.active {
+    display: flex;
+}
+
+
+/* Opciones */
+
+.profile-option,
+.profile-logout {
+    padding: 11px 12px;
+
+    color: #cccccc;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    transition: 0.2s;
+}
+
+.profile-option:hover {
+    color: white;
+
+    background-color: #1b1b1b;
+}
+
+.profile-logout {
+    color: #ff5c5c;
+
+    margin-top: 4px;
+
+    border-top: 1px solid #222222;
+}
+
+.profile-logout:hover {
+    color: white;
+
+    background-color: rgba(255, 92, 92, 0.14);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logout {
+    margin-top: auto;
+    color: #ff5c5c !important;
+}
+
+.sidebar-logout:hover {
+    color: white !important;
+    background-color: rgba(255, 92, 92, 0.12) !important;
+}
