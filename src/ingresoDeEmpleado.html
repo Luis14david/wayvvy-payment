@@ -96,13 +96,16 @@
 </div>
 
 <div class="form-group">
-    <label for="id_puesto">ID del puesto</label>
+    <label for="id_puesto">Puesto</label>
+
     <div class="input-container">
-        <input type="number" id="id_puesto" name="id_puesto" placeholder="Ej: 1">
+        <select id="id_puesto" name="id_puesto">
+            <option value="">Seleccione un puesto...</option>
+        </select>
+
         <span class="error-icon" id="errorIdPuesto"></span>
     </div>
 </div>
-
 <div class="form-group">
     <label for="estado">Estado</label>
 

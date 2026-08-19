@@ -8,11 +8,38 @@
     <title>Wayvvy Payroll - Ver empleado</title>
 
     <link rel="stylesheet" href="css/verEmpleado.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
 
     <main class="employee-view-container">
+
+        <header class="topbar">
+
+    <div class="profile-menu">
+
+        <button class="profile-button" id="profileButton">
+            <span class="profile-avatar">A</span>
+            <span>Administrador</span>
+            <span class="profile-arrow">▼</span>
+        </button>
+
+        <div class="profile-dropdown" id="profileDropdown">
+
+            <a href="#" class="profile-option">
+                Mi perfil
+            </a>
+
+            <a href="#" class="logout-button profile-logout">
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
 
         <div class="employee-view-card">
 
@@ -80,8 +107,8 @@
                 </div>
 
                 <div class="info-item">
-                    <span class="info-label">ID del puesto</span>
-                    <span class="info-value" id="id_puesto">-</span>
+                    <span class="info-label">Puesto</span>
+                    <span class="info-value" id="puesto">-</span>
                 </div>
 
                 <div class="info-item">
@@ -96,6 +123,7 @@
     </main>
 
     <script src="js/verEmpleado.js"></script>
+<script src="js/logout.js"></script>
 
 </body>
 

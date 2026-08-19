@@ -92,20 +92,20 @@ const valores = [
 app.get('/api/empleados', (req, res) => {
 
     const sql = `
-        SELECT
-            e.id_empleado,
-            e.numero_empleado,
-            e.nombres,
-            e.apellidos,
-            e.cedula,
-            p.nombre_puesto AS puesto,
-            e.fecha_ingreso,
-            e.estado
-        FROM empleados e
-        LEFT JOIN puestos p
-            ON e.id_puesto = p.id_puesto
-        ORDER BY e.numero_empleado ASC
-    `;
+    SELECT
+        e.id_empleado,
+        e.numero_empleado,
+        e.nombres,
+        e.apellidos,
+        e.cedula,
+        p.nombre_puesto AS puesto,
+        e.fecha_ingreso,
+        e.estado
+    FROM empleados e
+    LEFT JOIN puestos p
+        ON e.id_puesto = p.id_puesto
+    ORDER BY e.numero_empleado ASC
+`;
 
     conexion.query(sql, (error, resultados) => {
 
@@ -128,22 +128,25 @@ app.get('/api/empleados/:id', (req, res) => {
 
     const sql = `
         SELECT
-            id_empleado,
-            numero_empleado,
-            nombres,
-            apellidos,
-            cedula,
-            sexo,
-            fecha_nacimiento,
-            telefono,
-            correo,
-            direccion,
-            fecha_ingreso,
-            salario_base,
-            id_puesto,
-            estado
-        FROM empleados
-        WHERE id_empleado = ?
+            e.id_empleado,
+            e.numero_empleado,
+            e.nombres,
+            e.apellidos,
+            e.cedula,
+            e.sexo,
+            e.fecha_nacimiento,
+            e.telefono,
+            e.correo,
+            e.direccion,
+            e.fecha_ingreso,
+            e.salario_base,
+            e.id_puesto,
+            p.nombre_puesto AS puesto,
+            e.estado
+        FROM empleados e
+        LEFT JOIN puestos p
+            ON e.id_puesto = p.id_puesto
+        WHERE e.id_empleado = ?
     `;
 
     conexion.query(sql, [idEmpleado], (error, resultados) => {
@@ -239,6 +242,77 @@ app.put('/api/empleados/:id', (req, res) => {
 
         res.json({
             mensaje: "Empleado actualizado correctamente"
+        });
+    });
+});
+
+app.get('/api/puestos', (req, res) => {
+
+    const sql = `
+        SELECT
+            id_puesto,
+            nombre_puesto
+        FROM puestos
+        ORDER BY nombre_puesto ASC
+    `;
+
+    conexion.query(sql, (error, resultados) => {
+
+        if (error) {
+            console.log("ERROR AL CARGAR PUESTOS:");
+            console.log(error);
+
+            return res.status(500).json({
+                error: "Error al cargar los puestos"
+            });
+        }
+
+        res.json(resultados);
+    });
+});
+
+app.post('/api/puestos', (req, res) => {
+
+    const {
+        nombre_puesto,
+        descripcion,
+        id_departamento
+    } = req.body;
+
+    const departamento =
+        id_departamento === '' || id_departamento === undefined
+            ? null
+            : id_departamento;
+
+    const sql = `
+        INSERT INTO puestos (
+            nombre_puesto,
+            descripcion,
+            id_departamento
+        )
+        VALUES (?, ?, ?)
+    `;
+
+    const valores = [
+        nombre_puesto,
+        descripcion,
+        departamento
+    ];
+
+    conexion.query(sql, valores, (error, resultado) => {
+
+        if (error) {
+            console.log("ERROR AL GUARDAR PUESTO:");
+            console.log(error);
+
+            return res.status(500).json({
+                error: "No se pudo registrar el puesto"
+            });
+        }
+
+        res.status(201).json({
+            mensaje: "Puesto registrado correctamente",
+            id_puesto: resultado.insertId
         });
     });
 });

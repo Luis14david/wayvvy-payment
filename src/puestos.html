@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Puestos</title>
+
+    <link rel="stylesheet" href="css/puestos.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body class="puestos-body">
+
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="empleados.html">Empleados</a>
+            <a href="#">Nómina</a>
+            <a href="#">Asistencia</a>
+            <a href="#">Incentivos</a>
+            <a href="#">Reportes</a>
+            <a href="puestos.html">Puestos</a>
+            <a href="#">Configuración</a>
+
+            <a href="#" class="logout-button sidebar-logout">
+                Cerrar sesión
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <main class="puestos-content">
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button class="profile-button" id="profileButton">
+                    <span class="profile-avatar">A</span>
+                    <span>Administrador</span>
+                    <span class="profile-arrow">▼</span>
+                </button>
+
+                <div class="profile-dropdown" id="profileDropdown">
+
+                    <a href="#" class="profile-option">
+                        Mi perfil
+                    </a>
+
+                    <a href="#" class="logout-button profile-logout">
+                        Cerrar sesión
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="puestos-header">
+            <div>
+                <h1>Puestos</h1>
+                <p>Administración de puestos de trabajo.</p>
+            </div>
+        </div>
+
+
+        <section class="puesto-form-card">
+
+            <h2>Nuevo puesto</h2>
+
+            <form id="puestoForm">
+
+                <div class="form-group">
+                    <label for="nombre_puesto">Nombre del puesto</label>
+
+                    <input
+                        type="text"
+                        id="nombre_puesto"
+                        name="nombre_puesto"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <button type="submit" class="btn-guardar">
+                    Guardar puesto
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/logout.js"></script>
+
+</body>
+
+</html>

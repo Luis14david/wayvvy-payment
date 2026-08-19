@@ -8,6 +8,7 @@
     <title>Wayvvy Payroll - Empleados</title>
 
     <link rel="stylesheet" href="css/empleados.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="dashboard-body">
@@ -23,12 +24,40 @@
             <a href="#">Asistencia</a>
             <a href="#">Incentivos</a>
             <a href="#">Reportes</a>
+            <a href="puestos.html">Puestos</a>
             <a href="#">Configuración</a>
+            <a href="#" class="logout-button sidebar-logout">Cerrar sesión</a>
         </nav>
 
     </aside>
 
     <main class="employees-content">
+
+        <header class="topbar">
+
+    <div class="profile-menu">
+
+        <button class="profile-button" id="profileButton">
+            <span class="profile-avatar">A</span>
+            <span>Administrador</span>
+            <span class="profile-arrow">▼</span>
+        </button>
+
+        <div class="profile-dropdown" id="profileDropdown">
+
+            <a href="#" class="profile-option">
+                Mi perfil
+            </a>
+
+            <a href="#" class="logout-button profile-logout">
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
 
         <div class="employees-header">
 
@@ -83,7 +112,12 @@
         </div>
 
     </main>
-<script src="/js/empleados.js"></script>
+<script src="js/empleados.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+</html>
+
 </body>
 
 </html>
