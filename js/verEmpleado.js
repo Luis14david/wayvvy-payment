@@ -61,8 +61,8 @@ if (idEmpleado) {
                     })}`
                     : "-";
 
-            document.getElementById("id_puesto").textContent =
-                empleado.id_puesto || "-";
+            document.getElementById("puesto").textContent =
+                empleado.puesto || "Sin puesto";
 
             document.getElementById("estado").textContent =
                 empleado.estado || "-";
