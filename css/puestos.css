@@ -212,3 +212,161 @@
     box-shadow:
         0 5px 15px rgba(40, 184, 213, 0.3);
 }
+
+/* =========================
+   LISTA DE PUESTOS
+========================= */
+
+.puestos-lista-card {
+    margin-top: 30px;
+
+    background-color: #111111;
+
+    border: 1px solid #252525;
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
+}
+
+
+.puestos-lista-header {
+    margin-bottom: 20px;
+}
+
+
+.puestos-lista-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   TABLA DE PUESTOS
+========================= */
+
+.puestos-table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.puestos-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+.puestos-table th {
+    padding: 14px 12px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #2a2a2a;
+}
+
+
+.puestos-table td {
+    padding: 16px 12px;
+
+    border-bottom: 1px solid #1f1f1f;
+
+    vertical-align: middle;
+
+    line-height: 1.5;
+}
+
+
+/* ID */
+
+.puestos-table th:nth-child(1),
+.puestos-table td:nth-child(1) {
+    width: 70px;
+}
+
+
+/* NOMBRE DEL PUESTO */
+
+.puestos-table th:nth-child(2),
+.puestos-table td:nth-child(2) {
+    width: 220px;
+
+    font-weight: 500;
+}
+
+
+/* DESCRIPCIÓN */
+
+.puestos-table th:nth-child(3),
+.puestos-table td:nth-child(3) {
+    width: auto;
+
+    color: #cccccc;
+
+    word-wrap: break-word;
+}
+
+
+/* ACCIONES */
+
+.puestos-table th:nth-child(4),
+.puestos-table td:nth-child(4) {
+    width: 90px;
+
+    text-align: center;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.puestos-table tbody tr {
+    transition: 0.2s;
+}
+
+
+.puestos-table tbody tr:hover {
+    background-color: #161616;
+}
+
+/* =========================
+   CANCELAR EDICIÓN
+========================= */
+
+.btn-cancelar-edicion {
+    margin-left: 10px;
+
+    padding: 12px 20px;
+
+    background-color: transparent;
+    color: #ff5c5c;
+
+    border: 1px solid #ff5c5c;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-cancelar-edicion:hover {
+    background-color: rgba(255, 92, 92, 0.12);
+
+    box-shadow:
+        0 0 8px rgba(255, 92, 92, 0.35);
+
+    transform: translateY(-2px);
+}

@@ -369,3 +369,48 @@ body {
     box-shadow:
         0 0 8px rgba(40, 184, 213, 0.35);
 }
+
+
+/* ACTIVO - VERDE */
+.active-status {
+    color: #9DDB20;
+    background-color: rgba(157, 219, 32, 0.15);
+
+    border: 1px solid rgba(157, 219, 32, 0.25);
+}
+
+
+/* INACTIVO - ROJO */
+.inactive-status {
+    color: #ff5c5c;
+    background-color: rgba(255, 92, 92, 0.12);
+
+    border: 1px solid rgba(255, 92, 92, 0.25);
+}
+
+
+/* SUSPENDIDO - NARANJA */
+.suspended-status {
+    color: #ff9f43;
+    background-color: rgba(255, 159, 67, 0.12);
+
+    border: 1px solid rgba(255, 159, 67, 0.25);
+}
+
+
+/* LICENCIA - AMARILLO */
+.license-status {
+    color: #ffd93d;
+    background-color: rgba(255, 217, 61, 0.12);
+
+    border: 1px solid rgba(255, 217, 61, 0.25);
+}
+
+
+/* VACACIONES - AZUL */
+.vacation-status {
+    color: #28B8D5;
+    background-color: rgba(40, 184, 213, 0.12);
+
+    border: 1px solid rgba(40, 184, 213, 0.25);
+}
