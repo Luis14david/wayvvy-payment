@@ -110,13 +110,14 @@ app.get('/api/empleados', (req, res) => {
     conexion.query(sql, (error, resultados) => {
 
         if (error) {
-            console.log('ERROR AL CARGAR EMPLEADOS:');
-            console.log(error);
+    console.log("ERROR AL CARGAR PUESTOS:");
+    console.log(error);
 
-            return res.status(500).json({
-                error: 'Error al cargar los empleados'
-            });
-        }
+    return res.status(500).json({
+        error: "Error al cargar los puestos",
+        detalle: error.sqlMessage || error.message
+    });
+}
 
         res.json(resultados);
     });
@@ -251,7 +252,8 @@ app.get('/api/puestos', (req, res) => {
     const sql = `
         SELECT
             id_puesto,
-            nombre_puesto
+            nombre_puesto,
+             descripcion
         FROM puestos
         ORDER BY nombre_puesto ASC
     `;
@@ -315,6 +317,102 @@ app.post('/api/puestos', (req, res) => {
             id_puesto: resultado.insertId
         });
     });
+});
+
+app.get('/api/estados-empleado', (req, res) => {
+
+    const sql = `
+        SHOW COLUMNS
+        FROM empleados
+        LIKE 'estado'
+    `;
+
+    conexion.query(sql, (error, resultados) => {
+
+        if (error) {
+            console.log("ERROR AL CARGAR ESTADOS:");
+            console.log(error);
+
+            return res.status(500).json({
+                error: "No se pudieron cargar los estados"
+            });
+        }
+
+        const tipo = resultados[0].Type;
+
+        const estados = tipo
+            .replace("enum(", "")
+            .replace(")", "")
+            .replaceAll("'", "")
+            .split(",");
+
+        res.json(estados);
+    });
+});
+
+app.put('/api/puestos/:id', (req, res) => {
+
+    const idPuesto = req.params.id;
+
+    const {
+        nombre_puesto,
+        descripcion,
+        id_departamento
+    } = req.body;
+
+
+    const departamento =
+        id_departamento === '' ||
+        id_departamento === undefined
+            ? null
+            : id_departamento;
+
+
+    const sql = `
+        UPDATE puestos
+        SET
+            nombre_puesto = ?,
+            descripcion = ?,
+            id_departamento = ?
+        WHERE id_puesto = ?
+    `;
+
+
+    const valores = [
+        nombre_puesto,
+        descripcion,
+        departamento,
+        idPuesto
+    ];
+
+
+    conexion.query(sql, valores, (error, resultado) => {
+
+        if (error) {
+
+            console.log("ERROR AL ACTUALIZAR PUESTO:");
+            console.log(error);
+
+            return res.status(500).json({
+                error: "No se pudo actualizar el puesto"
+            });
+        }
+
+
+        if (resultado.affectedRows === 0) {
+
+            return res.status(404).json({
+                error: "Puesto no encontrado"
+            });
+        }
+
+
+        res.json({
+            mensaje: "Puesto actualizado correctamente"
+        });
+
+    });
+
 });
 
 app.listen(3001, () => {

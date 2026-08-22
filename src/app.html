@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll</title>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/empleados.css">
+    <link rel="stylesheet" href="/css/puestos.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/verEmpleado.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- MENÚ PERMANENTE -->
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+
+            <a
+                href="#"
+                data-page="dashboard"
+                data-i18n="dashboard"
+            >
+                Dashboard
+            </a>
+
+            <a
+                href="#"
+                data-page="empleados"
+                data-i18n="empleados"
+            >
+                Empleados
+            </a>
+
+            <a
+                href="#"
+                data-page="nomina"
+                data-i18n="nomina"
+            >
+                Nómina
+            </a>
+
+            <a
+                href="#"
+                data-page="asistencia"
+                data-i18n="asistencia"
+            >
+                Asistencia
+            </a>
+
+            <a
+                href="#"
+                data-page="incentivos"
+                data-i18n="incentivos"
+            >
+                Incentivos
+            </a>
+
+            <a
+                href="#"
+                data-page="reportes"
+                data-i18n="reportes"
+            >
+                Reportes
+            </a>
+
+            <a
+                href="#"
+                data-page="puestos"
+                data-i18n="puestos"
+            >
+                Puestos
+            </a>
+
+            <a
+                href="#"
+                data-page="configuracion"
+                data-i18n="configuracion"
+            >
+                Configuración
+            </a>
+
+
+            <!-- IDIOMA -->
+            <div class="language-switch">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('es')"
+                >
+                    ES
+                </button>
+
+                <span>|</span>
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('en')"
+                >
+                    EN
+                </button>
+
+            </div>
+
+
+            <!-- CERRAR SESIÓN -->
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- SOLO ESTE CONTENIDO CAMBIA -->
+    <main
+        class="dashboard-content"
+        id="contenidoPrincipal"
+    >
+    </main>
+
+
+    <script src="/js/lang.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/appNavigation.js"></script>
+
+</body>
+
+</html>

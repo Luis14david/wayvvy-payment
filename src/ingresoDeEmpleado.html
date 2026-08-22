@@ -99,6 +99,7 @@
     <label for="id_puesto">Puesto</label>
 
     <div class="input-container">
+
         <select id="id_puesto" name="id_puesto">
             <option value="">Seleccione un puesto...</option>
         </select>
@@ -106,15 +107,14 @@
         <span class="error-icon" id="errorIdPuesto"></span>
     </div>
 </div>
+
 <div class="form-group">
     <label for="estado">Estado</label>
 
     <div class="input-container">
-        <select id="estado" name="estado">
-            <option value="">Seleccione...</option>
-            <option value="activo">Activo</option>
-            <option value="inactivo">Inactivo</option>
-            <option value="suspendido">Suspendido</option>
+
+        <select id="estado" name="estado" required>
+    <option value="">Seleccione un estado...</option>
         </select>
         <span class="error-icon" id="errorEstado"></span>
     </div>
