@@ -44,7 +44,7 @@ formulario.addEventListener("submit", function(event) {
     mensaje.style.color = "limegreen";
 
     setTimeout(function() {
-        window.location.href = "dashboard.html";
+        window.location.href = "/app.html";
     }, 1000);
 
 } else {

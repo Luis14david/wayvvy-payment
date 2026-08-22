@@ -48,6 +48,29 @@ async function cargarPuestos() {
     });
 }
 
+async function cargarEstados() {
+
+    const selectEstado = document.getElementById("estado");
+
+    const response = await fetch("/api/estados-empleado");
+
+    if (!response.ok) {
+        throw new Error("No se pudieron cargar los estados");
+    }
+
+    const estados = await response.json();
+
+    estados.forEach(function(estado) {
+
+        const opcion = document.createElement("option");
+
+        opcion.value = estado.toLowerCase();
+        opcion.textContent = estado;
+
+        selectEstado.appendChild(opcion);
+    });
+}
+
 
 // ==========================================
 // CARGAR EMPLEADO PARA EDITAR
@@ -121,19 +144,13 @@ async function cargarEmpleado() {
 // ==========================================
 
 async function iniciarFormulario() {
-
     try {
-
-        // Primero cargamos el dropdown
         await cargarPuestos();
-
-        // Después cargamos al empleado si estamos editando
+        await cargarEstados();
         await cargarEmpleado();
 
     } catch (error) {
-
         console.error("Error al iniciar formulario:", error);
-
         alert("No se pudieron cargar los datos del formulario.");
     }
 }
@@ -161,7 +178,7 @@ btnCancelar.addEventListener("click", function(event) {
         // No se modificó absolutamente nada
         if (estadoActual === estadoInicial) {
 
-            window.location.href = "/empleados.html";
+            window.location.href = "/app.html?pagina=empleados";
             return;
         }
 
@@ -171,7 +188,7 @@ btnCancelar.addEventListener("click", function(event) {
         );
 
         if (confirmarSalida) {
-            window.location.href = "/empleados.html";
+           window.location.href = "/app.html?pagina=empleados";
         }
 
         return;
