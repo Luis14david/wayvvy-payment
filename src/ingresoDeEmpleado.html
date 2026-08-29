@@ -10,13 +10,31 @@
 
 <body>
 
+    <div class="employee-language-switch">
+    <button
+        type="button"
+        onclick="cambiarIdioma('es')"
+    >
+        ES
+    </button>
+
+    <span>|</span>
+
+    <button
+        type="button"
+        onclick="cambiarIdioma('en')"
+    >
+        EN
+    </button>
+</div>
+
     <div class="login-container">
 
 
     <form action="/registrar" method="POST" class="employee-form">
 
         <div class="form-group">
-    <label for="nombres">Nombre</label>
+    <label for="nombres" data-i18n="nombre">Nombre</label>
     <div class="input-container">
         <input type="text" id="nombres" name="nombres">
         <span class="error-icon" id="errorNombre"></span>
@@ -24,7 +42,7 @@
 </div>
 
     <div class="form-group">
-    <label for="apellidos">Apellido</label>
+    <label for="apellidos" data-i18n="apellido">Apellido</label>
     <div class="input-container">
         <input type="text" id="apellidos" name="apellidos">
         <span class="error-icon" id="errorApellido"></span>
@@ -32,7 +50,7 @@
 </div>
 
     <div class="form-group">
-    <label for="cedula">Cedula</label>
+    <label for="cedula" data-i18n="cedulaFormulario">Cédula</label>
     <div class="input-container">
         <input type="text" id="cedula" name="cedula">
         <span class="error-icon" id="errorCedula"></span>
@@ -40,7 +58,7 @@
 </div>
 
 <div class="form-group">
-    <label for="sexo">Sexo</label>
+    <label for="sexo" data-i18n="sexoFormulario">Sexo</label>
     <div class="input-container">
         <input type="text" id="sexo" name="sexo">
         <span class="error-icon" id="errorSexo"></span>
@@ -48,7 +66,9 @@
 </div>
 
 <div class="form-group">
-    <label for="nacimiento">Fecha de nacimiento</label>
+    <label for="nacimiento" data-i18n="fechaNacimientoFormulario">
+    Fecha de nacimiento
+</label>
     <div class="input-container">
         <input type="date" id="nacimiento" name="nacimiento">
         <span class="error-icon" id="errorFechaDeNacimiento"></span>
@@ -56,31 +76,53 @@
 </div>
 
 <div class="form-group">
-    <label for="telefono">Teléfono</label>
+    <label for="telefono" data-i18n="telefonoFormulario">Teléfono</label>
     <div class="input-container">
-        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 809-555-1234">
+        <input
+    type="tel"
+    id="telefono"
+    name="telefono"
+    placeholder="Ej: 809-555-1234"
+    data-i18n-placeholder="telefonoPlaceholder"
+>
         <span class="error-icon" id="errorTelefono"></span>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="correo">Correo electrónico</label>
+    <label for="correo" data-i18n="correoElectronico">
+    Correo electrónico
+</label>
     <div class="input-container">
-        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+        <input
+    type="email"
+    id="correo"
+    name="correo"
+    placeholder="ejemplo@correo.com"
+    data-i18n-placeholder="correoPlaceholder"
+>
         <span class="error-icon" id="errorCorreo"></span>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="direccion">Dirección</label>
+    <label for="direccion" data-i18n="direccionFormulario">Dirección</label>
     <div class="input-container">
-        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad">
+        <input
+    type="text"
+    id="direccion"
+    name="direccion"
+    placeholder="Calle, número, ciudad"
+    data-i18n-placeholder="direccionPlaceholder"
+>
         <span class="error-icon" id="errorDireccion"></span>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fecha_ingreso">Fecha de ingreso</label>
+    <label for="fecha_ingreso" data-i18n="fechaIngresoFormulario">
+    Fecha de ingreso
+</label>
     <div class="input-container">
         <input type="date" id="fecha_ingreso" name="fecha_ingreso">
         <span class="error-icon" id="errorFechaIngreso"></span>
@@ -88,7 +130,9 @@
 </div>
 
 <div class="form-group">
-    <label for="salario_base">Salario base</label>
+    <label for="salario_base" data-i18n="salarioBaseFormulario">
+    Salario base
+</label>
     <div class="input-container">
         <input type="number" id="salario_base" name="salario_base" step="0.01" placeholder="0.00">
         <span class="error-icon" id="errorSalarioBase"></span>
@@ -96,12 +140,14 @@
 </div>
 
 <div class="form-group">
-    <label for="id_puesto">Puesto</label>
+    <label for="id_puesto" data-i18n="puestoFormulario">Puesto</label>
 
     <div class="input-container">
 
         <select id="id_puesto" name="id_puesto">
-            <option value="">Seleccione un puesto...</option>
+            <option value="" data-i18n="seleccionarPuesto">
+    Seleccione un puesto...
+</option>
         </select>
 
         <span class="error-icon" id="errorIdPuesto"></span>
@@ -109,12 +155,14 @@
 </div>
 
 <div class="form-group">
-    <label for="estado">Estado</label>
+    <label for="estado" data-i18n="estadoFormulario">Estado</label>
 
     <div class="input-container">
 
         <select id="estado" name="estado" required>
-    <option value="">Seleccione un estado...</option>
+    <option value="" data-i18n="seleccionarEstado">
+    Seleccione un estado...
+</option>
         </select>
         <span class="error-icon" id="errorEstado"></span>
     </div>
@@ -123,13 +171,22 @@
 
     <div class="form-actions">
 
-    <a href="empleados.html" class="btn-cancelar" id="btnCancelar">
+    <a
+    href="/app.html?pagina=empleados"
+    class="btn-cancelar"
+    id="btnCancelar"
+    data-i18n="cancelar"
+>
     Cancelar
 </a>
 
-    <button type="submit" class="btn-agregar">
-        Agregar empleado
-    </button>
+   <button
+    type="submit"
+    class="btn-agregar"
+    data-i18n="agregarEmpleado"
+>
+    Agregar empleado
+</button>
 
 </div>
 
@@ -137,6 +194,7 @@
 
 </div>
 
+<script src="js/lang.js"></script>
 <script src="js/ingresoEmpleado.js"></script>
 
 </body>
