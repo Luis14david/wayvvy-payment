@@ -41,8 +41,8 @@ botonesLogout.forEach(function(boton) {
         event.preventDefault();
 
         const confirmar = confirm(
-            "¿Seguro que desea cerrar sesión?"
-        );
+    t("confirmarCerrarSesion")
+);
 
         if (confirmar) {
             window.location.href = "/";

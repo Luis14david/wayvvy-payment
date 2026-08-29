@@ -62,13 +62,25 @@ async function cargarEstados() {
 
     estados.forEach(function(estado) {
 
-        const opcion = document.createElement("option");
+    const opcion =
+        document.createElement("option");
 
-        opcion.value = estado.toLowerCase();
-        opcion.textContent = estado;
+    const claveEstado =
+        estado
+            .trim()
+            .toLowerCase();
 
-        selectEstado.appendChild(opcion);
-    });
+    // El valor que se guarda permanece igual
+    opcion.value = claveEstado;
+
+    // Permitimos que lang.js traduzca la opción
+    opcion.dataset.i18n = claveEstado;
+
+    // Texto inicial según el idioma actual
+    opcion.textContent = t(claveEstado);
+
+    selectEstado.appendChild(opcion);
+});
 }
 
 
@@ -132,7 +144,11 @@ async function cargarEmpleado() {
             ? empleado.estado.toLowerCase()
             : "";
 
-    botonGuardar.textContent = "Guardar cambios";
+    botonGuardar.dataset.i18n =
+    "guardarCambiosEmpleado";
+
+botonGuardar.textContent =
+    t("guardarCambiosEmpleado");
 
     // Guardamos cómo estaba el formulario originalmente
     estadoInicial = obtenerEstadoFormulario();
@@ -151,7 +167,7 @@ async function iniciarFormulario() {
 
     } catch (error) {
         console.error("Error al iniciar formulario:", error);
-        alert("No se pudieron cargar los datos del formulario.");
+       alert(t("errorCargarFormulario"));
     }
 }
 
@@ -184,7 +200,7 @@ btnCancelar.addEventListener("click", function(event) {
 
         // Hay cambios sin guardar
         const confirmarSalida = confirm(
-            "Hay cambios sin guardar. ¿Seguro que desea salir?"
+            t("cambiosSinGuardar")
         );
 
         if (confirmarSalida) {
@@ -214,17 +230,17 @@ btnCancelar.addEventListener("click", function(event) {
     // Formulario completamente vacío
     if (!hayDatos) {
 
-        window.location.href = "/empleados.html";
+        window.location.href = "/app.html?pagina=empleados";
         return;
     }
 
     // Hay datos ingresados
     const confirmarCancelacion = confirm(
-        "Hay datos ingresados en el formulario. ¿Seguro que desea cancelar?"
-    );
+    t("datosSinGuardar")
+);
 
     if (confirmarCancelacion) {
-        window.location.href = "/empleados.html";
+        window.location.href = "/app.html?pagina=empleados";
     }
 });
 
@@ -245,16 +261,15 @@ if (idEmpleado) {
         // No se modificó nada
         if (estadoActual === estadoInicial) {
 
-            alert("No se han realizado cambios.");
+            alert(t("sinCambios"));
             return;
         }
 
 
         // Confirmación antes de guardar
         const confirmarGuardado = confirm(
-            "¿Seguro que desea guardar los cambios realizados?"
-        );
-
+    t("confirmarGuardarEmpleado")
+);
         if (!confirmarGuardado) {
             return;
         }
@@ -325,9 +340,11 @@ if (idEmpleado) {
 
             const resultado = await response.json();
 
-            alert(resultado.mensaje);
+            alert(
+    t("empleadoActualizado")
+);
 
-            window.location.href = "/empleados.html";
+            window.location.href = "/app.html?pagina=empleados";
 
 
         } catch (error) {
@@ -338,8 +355,8 @@ if (idEmpleado) {
             );
 
             alert(
-                "Ocurrió un error al actualizar el empleado."
-            );
+    t("errorActualizarEmpleado")
+);
         }
 
     });
