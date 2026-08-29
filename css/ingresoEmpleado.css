@@ -176,3 +176,54 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
 }
+
+/* =========================================
+   SELECTOR DE IDIOMA - FORMULARIO EMPLEADO
+   ========================================= */
+
+.employee-language-switch {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    background-color: #0d0d0d;
+    border: 1px solid #252525;
+    border-radius: 8px;
+
+    z-index: 1000;
+}
+
+
+.employee-language-switch span {
+    color: #555;
+}
+
+
+.employee-language-switch button {
+    background: transparent;
+    border: none;
+
+    color: #888;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.employee-language-switch button:hover {
+    color: #28B8D5;
+}
+
+.idioma-activo {
+    color: #9DDB20 !important;
+}
