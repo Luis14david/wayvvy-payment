@@ -1,0 +1,586 @@
+/* =====================================================
+   REPORTES
+===================================================== */
+
+.reportes-header {
+    margin-bottom: 24px;
+}
+
+.reportes-header h1 {
+    margin: 0 0 6px 0;
+}
+
+.reportes-header p {
+    margin: 0;
+    color: #8d8d8d;
+}
+
+
+/* =====================================================
+   TARJETA PRINCIPAL
+===================================================== */
+
+.reportes-card {
+    background: #101010;
+    border: 1px solid #272727;
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.reportes-card h2 {
+    margin: 0 0 24px 0;
+}
+
+
+/* =====================================================
+   SELECTOR DE TIPO DE REPORTE
+===================================================== */
+
+.reportes-tipos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #252525;
+}
+
+.reporte-tipo-btn {
+    border: 1px solid #333;
+    background: #171717;
+    color: #aaa;
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.reporte-tipo-btn:hover {
+    color: #fff;
+    border-color: #555;
+}
+
+.reporte-tipo-btn.active {
+    background: #9DDB20;
+    border-color: #9DDB20;
+    color: #101010;
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.reportes-filtros {
+    display: grid;
+    grid-template-columns:
+        minmax(240px, 1fr)
+        180px
+        180px
+        auto;
+
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.reportes-filtros .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reportes-filtros label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #dedede;
+}
+
+.reportes-filtros select,
+.reportes-filtros input {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    background: #0a0a0a;
+    color: #fff;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.reportes-filtros select:focus,
+.reportes-filtros input:focus {
+    border-color: #9DDB20;
+}
+
+
+/* =====================================================
+   BOTÓN GENERAR
+===================================================== */
+
+#btnGenerarReporte {
+    min-height: 42px;
+
+    padding: 10px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #9DDB20;
+    color: #101010;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#btnGenerarReporte:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.reporte-resultados {
+    margin-top: 24px;
+}
+
+
+/* =====================================================
+   REPORTE DE HORAS
+===================================================== */
+
+.reporte-tabla-container {
+    overflow-x: auto;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+}
+
+.reporte-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reporte-tabla th,
+.reporte-tabla td {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid #252525;
+}
+
+.reporte-tabla th {
+    background: #0b0b0b;
+
+    color: #999;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.reporte-tabla td {
+    color: #e5e5e5;
+}
+
+.reporte-tabla tbody tr:hover {
+    background: #151515;
+}
+
+.reporte-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   RESUMEN DE HORAS
+===================================================== */
+
+.reporte-resumen {
+    margin-top: 22px;
+
+    padding: 20px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #272727;
+    border-radius: 12px;
+}
+
+.reporte-resumen h3 {
+    margin: 0 0 16px 0;
+}
+
+.reporte-resumen-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(160px, 1fr));
+
+    gap: 14px;
+}
+
+.reporte-resumen-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding: 16px;
+
+    background: #121212;
+
+    border: 1px solid #272727;
+    border-radius: 9px;
+}
+
+.reporte-resumen-grid span {
+    color: #999;
+    font-size: 13px;
+}
+
+.reporte-resumen-grid strong {
+    color: #9DDB20;
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   SIN RESULTADOS
+===================================================== */
+
+.reporte-sin-resultados {
+    padding: 26px;
+
+    text-align: center;
+    color: #999;
+
+    background: #0b0b0b;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   COMPROBANTE DE PAGO
+===================================================== */
+
+.comprobante-pago {
+    max-width: 780px;
+
+    margin: 10px auto 0 auto;
+
+    padding: 42px 46px;
+
+    background: #151515;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   ENCABEZADO DEL COMPROBANTE
+===================================================== */
+
+.comprobante-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid #333;
+}
+
+.comprobante-encabezado h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.comprobante-encabezado p {
+    margin: 7px 0 0 0;
+
+    color: #9DDB20;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.comprobante-periodo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    text-align: right;
+}
+
+.comprobante-periodo span {
+    color: #888;
+    font-size: 12px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comprobante-periodo strong {
+    color: #fff;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   DATOS DEL EMPLEADO
+===================================================== */
+
+.comprobante-empleado {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.comprobante-empleado h3 {
+    margin: 0 0 13px 0;
+
+    font-size: 22px;
+    color: #fff;
+}
+
+.comprobante-empleado p {
+    margin: 7px 0;
+
+    color: #999;
+    font-size: 14px;
+}
+
+.comprobante-empleado strong {
+    color: #eaeaea;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SECCIONES INGRESOS / DEDUCCIONES
+===================================================== */
+
+.comprobante-seccion {
+    padding: 26px 0;
+
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.comprobante-seccion h3 {
+    margin: 0 0 18px 0;
+
+    color: #fff;
+
+    font-size: 16px;
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* =====================================================
+   FILAS SIN CELDAS
+===================================================== */
+
+.comprobante-linea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 34px;
+
+    color: #aaa;
+}
+
+.comprobante-linea span {
+    font-size: 14px;
+}
+
+.comprobante-linea strong {
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   TOTALES
+===================================================== */
+
+.comprobante-linea.comprobante-total {
+    margin-top: 13px;
+    padding-top: 14px;
+
+    border-top: 1px solid #333;
+}
+
+.comprobante-linea.comprobante-total span,
+.comprobante-linea.comprobante-total strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   NETO A PAGAR
+===================================================== */
+
+.comprobante-neto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 28px 0;
+
+    padding: 20px 22px;
+
+    background: #9DDB20;
+
+    border-radius: 10px;
+
+    color: #101010;
+}
+
+.comprobante-neto span {
+    font-size: 15px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comprobante-neto strong {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   FIRMAS
+===================================================== */
+
+.comprobante-firmas {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    margin-top: 55px;
+    padding-top: 15px;
+}
+
+.comprobante-firmas > div {
+    text-align: center;
+}
+
+.linea-firma {
+    display: block;
+
+    width: 100%;
+
+    border-top: 1px solid #777;
+
+    margin-bottom: 10px;
+}
+
+.comprobante-firmas p {
+    margin: 0;
+
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (
+    max-width: 950px
+) {
+
+    .reportes-filtros {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .reporte-resumen-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (
+    max-width: 650px
+) {
+
+    .reportes-filtros {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .reportes-tipos {
+        flex-direction: column;
+    }
+
+
+    .comprobante-pago {
+        padding: 28px 22px;
+    }
+
+
+    .comprobante-encabezado {
+        flex-direction: column;
+    }
+
+
+    .comprobante-periodo {
+        text-align: left;
+    }
+
+
+    .comprobante-firmas {
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+    }
+
+}

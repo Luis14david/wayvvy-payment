@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   ESTRUCTURA
+========================= */
+
+.dashboard-body {
+    min-height: 100vh;
+
+    display: flex;
+
+    background-color: #080808;
+    color: white;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+
+    background-color: #111111;
+
+    padding: 30px 20px;
+
+    border-right: 1px solid #222222;
+}
+
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.sidebar nav a {
+    padding: 12px 15px;
+
+    color: #bbbbbb;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        rgba(157, 219, 32, 0.18),
+        rgba(40, 184, 213, 0.18)
+    );
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.employees-content {
+    flex: 1;
+
+    padding: 40px;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.employees-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.employees-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+}
+
+
+.employees-header p {
+    margin-top: 8px;
+
+    color: #888888;
+}
+
+
+/* =========================
+   BOTÓN NUEVO EMPLEADO
+========================= */
+
+.btn-new-employee {
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: #080808;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-new-employee:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 8px #9DDB20,
+        0 0 16px rgba(40, 184, 213, 0.4);
+}
+
+
+/* =========================
+   CONTENEDOR DE LA TABLA
+========================= */
+
+.employees-card {
+    background-color: #111111;
+
+    border: 1px solid #222222;
+
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+
+.table-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.table-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.employee-search {
+    width: 260px;
+
+    padding: 11px 14px;
+
+    background-color: #181818;
+    color: white;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+
+.employee-search:focus {
+    border-color: #55d6c2;
+
+    box-shadow:
+        0 0 5px rgba(85, 214, 194, 0.6);
+}
+
+
+/* =========================
+   TABLA
+========================= */
+
+.employees-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.employees-table th {
+    padding: 14px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.employees-table td {
+    padding: 16px 14px;
+
+    border-bottom: 1px solid #1e1e1e;
+}
+
+
+.employees-table tbody tr {
+    transition: 0.2s;
+}
+
+
+.employees-table tbody tr:hover {
+    background-color: #161616;
+}
+
+
+/* =========================
+   ESTADOS
+========================= */
+
+.status {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.active-status {
+    color: #9DDB20;
+
+    background-color: rgba(157, 219, 32, 0.12);
+}
+
+
+/* =========================
+   ACCIONES
+========================= */
+
+.action-button {
+    padding: 7px 12px;
+
+    background-color: transparent;
+
+    color: #28B8D5;
+
+    border: 1px solid #28B8D5;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.action-button:hover {
+    background-color: #28B8D5;
+
+    color: #080808;
+}
+
+.delete-button {
+    padding: 7px 10px;
+
+    background-color: transparent;
+
+    color: #ff4d4d;
+
+    border: 1px solid #ff4d4d;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #ff4d4d;
+
+    color: white;
+
+    box-shadow:
+        0 0 8px rgba(255, 77, 77, 0.5);
+}
+
+.acciones-empleado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-button {
+    width: 45px;
+    height: 31px;
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    color: #888888;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-button:hover {
+    color: #28B8D5;
+    border-color: #28B8D5;
+
+    background-color: rgba(40, 184, 213, 0.08);
+
+    box-shadow:
+        0 0 8px rgba(40, 184, 213, 0.35);
+}
+
+
+/* ACTIVO - VERDE */
+.active-status {
+    color: #9DDB20;
+    background-color: rgba(157, 219, 32, 0.15);
+
+    border: 1px solid rgba(157, 219, 32, 0.25);
+}
+
+
+/* INACTIVO - ROJO */
+.inactive-status {
+    color: #ff5c5c;
+    background-color: rgba(255, 92, 92, 0.12);
+
+    border: 1px solid rgba(255, 92, 92, 0.25);
+}
+
+
+/* SUSPENDIDO - NARANJA */
+.suspended-status {
+    color: #ff9f43;
+    background-color: rgba(255, 159, 67, 0.12);
+
+    border: 1px solid rgba(255, 159, 67, 0.25);
+}
+
+
+/* LICENCIA - AMARILLO */
+.license-status {
+    color: #ffd93d;
+    background-color: rgba(255, 217, 61, 0.12);
+
+    border: 1px solid rgba(255, 217, 61, 0.25);
+}
+
+
+/* VACACIONES - AZUL */
+.vacation-status {
+    color: #28B8D5;
+    background-color: rgba(40, 184, 213, 0.12);
+
+    border: 1px solid rgba(40, 184, 213, 0.25);
+}
