@@ -1,0 +1,13 @@
+// Puestos
+
+
+INSERT INTO puestos (nombre_puesto, descripcion, id_departamento) VALUES
+('Agente de servicio al cliente', 'Atencion y servicio a clientes', 4),
+('Técnico de soporte', 'Reparacion y soporte de equipos', 3),
+('Supervisor', 'Supervision y coordinacion del personal', 1),
+('Analista de backoffice', 'Manejo y analisis de cuentas de clientes', 2),
+('Administrador', 'Administracion y gestion general', 1);
+
+
+//Roles
+https://chatgpt.com/share/6a87bd05-0418-83ea-b384-af4f12b61d59
