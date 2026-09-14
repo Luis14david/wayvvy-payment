@@ -1,0 +1,115 @@
+/* =========================
+DASHBOARD
+========================= */
+
+/*
+   Los estilos base, el menú lateral,
+   el perfil y el layout están en common.css.
+*/
+
+
+/* Contenido principal */
+
+.dashboard-content h1 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+
+.dashboard-content p {
+    color: #aaaaaa;
+}
+
+
+.dashboard-header {
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.dashboard-header p {
+    margin-top: 8px;
+    color: #9ca3af;
+}
+
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+.dashboard-card {
+    min-width: 0;
+
+    background: #11141b;
+    border: 1px solid #242832;
+    border-radius: 12px;
+    padding: 22px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.dashboard-card-label {
+    display: block;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+
+.dashboard-card-value {
+    display: block;
+    font-size: 32px;
+    color: #9ddb20;
+}
+
+
+@media (max-width: 1000px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+.dashboard-chart {
+    margin-top: 24px;
+    padding: 24px;
+    background: #11141b;
+    border: 1px solid #242832;
+    border-radius: 12px;
+}
+
+.dashboard-chart h2 { margin: 0; font-size: 20px; }
+.dashboard-chart p { margin: 8px 0 24px; }
+.chart-list { list-style: none; margin: 0; padding: 0; }
+.chart-list li {
+    display: grid;
+    grid-template-columns: minmax(80px, 140px) minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+}
+.chart-list li > span:first-child { overflow-wrap: anywhere; }
+.chart-list strong { text-align: right; }
+.chart-track { height: 22px; background: #242832; border-radius: 6px; overflow: hidden; }
+.chart-bar { display: block; height: 100%; background: linear-gradient(90deg, #9ddb20, #28b8d5); border-radius: 6px; }
+@media (max-width: 600px) {
+    .dashboard-chart { padding: 18px; }
+    .chart-list li { grid-template-columns: 85px minmax(0, 1fr) 30px; gap: 8px; }
+}

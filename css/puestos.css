@@ -1,0 +1,298 @@
+/* =========================
+   CONTENIDO
+========================= */
+
+.puestos-header {
+    margin-bottom: 25px;
+}
+
+.puestos-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+}
+
+.puestos-header p {
+    margin-top: 8px;
+
+    color: #999999;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.puesto-form-card {
+    max-width: 650px;
+
+    background-color: #111111;
+
+    border: 1px solid #252525;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.puesto-form-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 22px;
+}
+
+.puestos-content .form-group {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    margin-bottom: 20px;
+}
+
+.puestos-content .form-group label {
+    margin-bottom: 8px;
+
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+.puestos-content .form-group input,
+.puestos-content .form-group textarea {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    background-color: #0b0b0b;
+
+    color: white;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.puestos-content .form-group textarea {
+    resize: vertical;
+}
+
+.puestos-content .form-group input:focus,
+.puestos-content .form-group textarea:focus {
+    border-color: #28B8D5;
+
+    box-shadow:
+        0 0 8px rgba(40, 184, 213, 0.25);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.puestos-content .btn-guardar {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: #080808;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.puestos-content .btn-guardar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(40, 184, 213, 0.3);
+}
+
+/* =========================
+   LISTA DE PUESTOS
+========================= */
+
+.puestos-lista-card {
+    min-width: 0;
+
+    margin-top: 30px;
+
+    background-color: #111111;
+
+    border: 1px solid #252525;
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
+}
+
+
+.puestos-lista-header {
+    margin-bottom: 20px;
+}
+
+
+.puestos-lista-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   TABLA DE PUESTOS
+========================= */
+
+.puestos-table-container {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.puestos-table {
+    width: 100%;
+    min-width: 600px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+.puestos-table th {
+    padding: 14px 12px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #2a2a2a;
+}
+
+
+.puestos-table td {
+    padding: 16px 12px;
+
+    border-bottom: 1px solid #1f1f1f;
+
+    vertical-align: middle;
+
+    line-height: 1.5;
+}
+
+
+/* ID */
+
+.puestos-table th:nth-child(1),
+.puestos-table td:nth-child(1) {
+    width: 70px;
+}
+
+
+/* NOMBRE DEL PUESTO */
+
+.puestos-table th:nth-child(2),
+.puestos-table td:nth-child(2) {
+    width: 220px;
+
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* DESCRIPCIÓN */
+
+.puestos-table th:nth-child(3),
+.puestos-table td:nth-child(3) {
+    width: auto;
+
+    color: #cccccc;
+
+    word-wrap: break-word;
+}
+
+
+/* ACCIONES */
+
+.puestos-table th:nth-child(4),
+.puestos-table td:nth-child(4) {
+    width: 90px;
+
+    text-align: center;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.puestos-table tbody tr {
+    transition: 0.2s;
+}
+
+
+.puestos-table tbody tr:hover {
+    background-color: #161616;
+}
+
+/* =========================
+   CANCELAR EDICIÓN
+========================= */
+
+.puestos-content .btn-cancelar-edicion {
+    margin-left: 10px;
+
+    padding: 12px 20px;
+
+    background-color: transparent;
+    color: #ff5c5c;
+
+    border: 1px solid #ff5c5c;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.puestos-content .btn-cancelar-edicion:hover {
+    background-color: rgba(255, 92, 92, 0.12);
+
+    box-shadow:
+        0 0 8px rgba(255, 92, 92, 0.35);
+
+    transform: translateY(-2px);
+}
