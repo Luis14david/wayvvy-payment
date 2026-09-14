@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Dashboard</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+            <a
+                href="/html/dashboard.html"
+                class="active"
+                aria-current="page"
+                data-i18n="dashboard"
+            >
+                Dashboard
+            </a>
+
+            <a href="/html/empleados.html" data-i18n="empleados">
+                Empleados
+            </a>
+
+            <a href="/html/nomina.html" data-i18n="nomina">
+                Nómina
+            </a>
+
+            <a href="/html/asistencia.html" data-i18n="asistencia">
+                Asistencia
+            </a>
+
+            <a href="/html/incentivos.html" data-i18n="incentivos">
+                Incentivos
+            </a>
+
+            <a href="/html/reportes.html" data-i18n="reportes">
+                Reportes
+            </a>
+
+            <a href="/html/puestos.html" data-i18n="puestos">
+                Puestos
+            </a>
+
+            <a href="/html/configuracion.html" data-i18n="configuracion">
+                Configuración
+            </a>
+
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+        </nav>
+
+        <div class="language-switch">
+
+            <button
+                type="button"
+                class="language-button"
+                onclick="cambiarIdioma('es')"
+            >
+                ES
+            </button>
+
+            <span>|</span>
+
+            <button
+                type="button"
+                class="language-button"
+                onclick="cambiarIdioma('en')"
+            >
+                EN
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="dashboard-content">
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button
+                    type="button"
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    <span class="profile-avatar">A</span>
+
+                    <span data-i18n="administrador">
+                        Administrador
+                    </span>
+
+                    <span class="profile-arrow">▼</span>
+                </button>
+
+                <div class="profile-dropdown" id="profileDropdown">
+
+                    <a href="#" class="profile-option">
+                        Mi perfil
+                    </a>
+
+                    <a
+                        href="#"
+                        class="logout-button profile-logout"
+                        data-i18n="cerrarSesion"
+                    >
+                        Cerrar sesión
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1 data-i18n="dashboard">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Resumen general de Wayvvy Payroll
+                </p>
+            </div>
+
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <span class="dashboard-card-label">
+                    Total de empleados
+                </span>
+
+                <strong
+                    class="dashboard-card-value"
+                    id="totalEmpleados"
+                >
+                    0
+                </strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span class="dashboard-card-label">
+                    Empleados activos
+                </span>
+
+                <strong
+                    class="dashboard-card-value"
+                    id="empleadosActivos"
+                >
+                    0
+                </strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span class="dashboard-card-label">
+                    Nóminas en borrador
+                </span>
+
+                <strong
+                    class="dashboard-card-value"
+                    id="nominasBorrador"
+                >
+                    0
+                </strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span
+                    class="dashboard-card-label"
+                    data-i18n="puestosRegistrados"
+                >
+                    Puestos registrados
+                </span>
+
+                <strong
+                    class="dashboard-card-value"
+                    id="totalPuestos"
+                >
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+        <section class="dashboard-chart" aria-labelledby="tituloGrafico">
+            <h2 id="tituloGrafico">Empleados por estado</h2>
+            <p id="estadoGrafico" role="status">Cargando empleados…</p>
+            <ul id="graficoEmpleados" class="chart-list"></ul>
+        </section>
+    </main>
+
+    <script src="/js/lang.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/logout.js"></script>
+
+</body>
+
+</html>

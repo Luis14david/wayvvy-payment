@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Detalle de nómina</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/nomina.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+
+            <a href="/html/dashboard.html" data-i18n="dashboard">
+                Dashboard
+            </a>
+
+            <a href="/html/empleados.html" data-i18n="empleados">
+                Empleados
+            </a>
+
+            <a
+                href="/html/nomina.html"
+                class="active"
+                aria-current="page"
+                data-i18n="nomina"
+            >
+                Nómina
+            </a>
+
+            <a href="/html/asistencia.html" data-i18n="asistencia">
+                Asistencia
+            </a>
+
+            <a href="/html/incentivos.html" data-i18n="incentivos">
+                Incentivos
+            </a>
+
+            <a href="/html/reportes.html" data-i18n="reportes">
+                Reportes
+            </a>
+
+            <a href="/html/puestos.html" data-i18n="puestos">
+                Puestos
+            </a>
+
+            <a href="/html/configuracion.html" data-i18n="configuracion">
+                Configuración
+            </a>
+
+            <div class="language-switch">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('es')"
+                >
+                    ES
+                </button>
+
+                <span>|</span>
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('en')"
+                >
+                    EN
+                </button>
+
+            </div>
+
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button
+                    type="button"
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    <span class="profile-avatar">
+                        A
+                    </span>
+
+                    <span data-i18n="administrador">
+                        Administrador
+                    </span>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+                </button>
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+                    <a href="#" class="profile-option">
+                        Mi perfil
+                    </a>
+
+                    <a
+                        href="#"
+                        class="logout-button profile-logout"
+                        data-i18n="cerrarSesion"
+                    >
+                        Cerrar sesión
+                    </a>
+                </div>
+
+            </div>
+
+        </header>
+
+
+                <section class="nomina-section">
+            <div class="nomina-header">
+                <h1>Detalle de nómina</h1>
+                <a class="btn-ver-nomina" href="/html/nomina.html">Volver a nóminas</a>
+            </div>
+            <p id="mensajeDetalleNomina" role="status">Cargando nómina...</p>
+            <div id="contenidoDetalleNomina" hidden>
+                <section class="nomina-card nomina-detalle-card" id="panelCalculoRegular" hidden>
+                    <h2>Resumen por empleado</h2>
+                    <button type="button" class="btn-ver-nomina" id="btnCalculoRegular">Consultar cálculo</button>
+                    <p id="mensajeCalculoRegular" role="status"></p>
+                    <table>
+                        <thead><tr><th scope="col">Empleado</th><th scope="col">Horas normales</th><th scope="col">Excedente semanal</th><th scope="col">Normal RD$</th><th scope="col">Excedente RD$</th><th scope="col">Bruto RD$</th></tr></thead>
+                        <tbody id="calculoRegularBody"></tbody>
+                    </table>
+                    <p id="totalCalculoRegular"></p>
+                    <div id="panelDescuentos" hidden>
+                        <h3>Descuentos del pago</h3>
+                        <table>
+                            <thead><tr><th scope="col">Empleado</th><th scope="col">AFP RD$</th><th scope="col">SFS RD$</th><th scope="col">ISR RD$</th><th scope="col">Total RD$</th><th scope="col">Neto RD$</th></tr></thead>
+                            <tbody id="descuentosBody"></tbody>
+                        </table>
+                        <h3>Acumulado mensual estimado</h3>
+                        <table>
+                            <thead><tr><th scope="col">Mes</th><th scope="col">Empleado</th><th scope="col">Bruto RD$</th><th scope="col">AFP RD$</th><th scope="col">SFS RD$</th><th scope="col">ISR RD$</th><th scope="col">Total RD$</th><th scope="col">Fecha de descuento</th></tr></thead>
+                            <tbody id="acumuladosBody"></tbody>
+                        </table>
+                    </div>
+                    <div id="incentivosAparte" hidden>
+                        <h3>Incentivos</h3>
+                        <table>
+                            <thead><tr><th scope="col">Empleado</th><th scope="col">Monto RD$</th></tr></thead>
+                            <tbody id="incentivosAparteBody"></tbody>
+                        </table>
+                        <p id="totalIncentivosAparte"></p>
+                    </div>
+                </section>
+                <div class="nomina-card">
+                    <h2>Nómina <span id="numeroNomina"></span></h2>
+                    <p id="avisoFechaPago" role="status" hidden></p>
+                    <button type="button" class="btn-ver-nomina" id="corregirFechaPago" hidden>Corregir fecha de pago</button>
+                    <dl class="nomina-datos">
+                        <div><dt>Período</dt><dd id="periodoNomina"></dd></div>
+                        <div><dt>Fecha de pago</dt><dd id="pagoNomina"></dd></div>
+                        <div><dt>Estado</dt><dd id="estadoNomina"></dd></div>
+                        <div><dt>Año</dt><dd id="anioNomina"></dd></div>
+                        <div><dt>Total bruto registrado</dt><dd id="brutoNomina"></dd></div>
+                        <div><dt>Deducciones registradas</dt><dd id="deduccionesNomina"></dd></div>
+                        <div><dt>Neto registrado</dt><dd id="netoNomina"></dd></div>
+                    </dl>
+                </div>
+                <div class="nomina-card nomina-detalle-card">
+                    <h2>Detalle por empleado</h2>
+                    <table>
+                        <thead><tr>
+                            <th scope="col">Empleado</th><th scope="col">Salario bruto</th>
+                            <th scope="col">Ingresos</th><th scope="col">Deducciones</th><th scope="col">Neto</th>
+                        </tr></thead>
+                        <tbody id="detalleNominaBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="/js/lang.js"></script>
+    <script src="/js/fechasNomina.js"></script>
+    <script src="/js/verNomina.js"></script>
+    <script src="/js/fechaPagoVista.js"></script>
+    <script src="/js/calculoRegularVista.js"></script>
+    <script src="/js/logout.js"></script>
+
+</body>
+
+</html>
