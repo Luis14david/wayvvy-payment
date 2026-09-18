@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Incentivos - Wayvvy Payroll</title>
+
+    <!-- ESTILOS GENERALES DEL SISTEMA -->
+    <link
+        rel="stylesheet"
+        href="/css/common.css"
+    >
+
+    <!-- ESTILO PROPIO DE INCENTIVOS -->
+    <link
+        rel="stylesheet"
+        href="/css/incentivos.css"
+    >
+</head>
+
+
+<body class="dashboard-body">
+
+    <!-- ========================================= -->
+    <!-- MENÚ LATERAL -->
+    <!-- ========================================= -->
+
+    <aside class="sidebar">
+
+        <h2>
+            WPayroll
+        </h2>
+
+        <nav>
+
+            <a
+                href="/html/dashboard.html"
+                data-i18n="dashboard"
+            >
+                Dashboard
+            </a>
+
+            <a
+                href="/html/empleados.html"
+                data-i18n="empleados"
+            >
+                Empleados
+            </a>
+
+            <a
+                href="/html/nomina.html"
+                data-i18n="nomina"
+            >
+                Nómina
+            </a>
+
+            <a
+                href="/html/asistencia.html"
+                data-i18n="asistencia"
+            >
+                Asistencia
+            </a>
+
+            <a
+                href="/html/incentivos.html"
+                class="active"
+                aria-current="page"
+                data-i18n="incentivos"
+            >
+                Incentivos
+            </a>
+
+            <a
+                href="/html/reportes.html"
+                data-i18n="reportes"
+            >
+                Reportes
+            </a>
+
+            <a
+                href="/html/puestos.html"
+                data-i18n="puestos"
+            >
+                Puestos
+            </a>
+
+            <a
+                href="/html/configuracion.html"
+                data-i18n="configuracion"
+            >
+                Configuración
+            </a>
+
+
+            <!-- ================================= -->
+            <!-- IDIOMA -->
+            <!-- ================================= -->
+
+            <div class="language-switch">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('es')"
+                >
+                    ES
+                </button>
+
+                <span>
+                    |
+                </span>
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('en')"
+                >
+                    EN
+                </button>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- CERRAR SESIÓN -->
+            <!-- ================================= -->
+
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="dashboard-content">
+
+        <!-- ========================================= -->
+        <!-- TOPBAR -->
+        <!-- ========================================= -->
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button
+                    class="profile-button"
+                    id="profileButton"
+                    type="button"
+                >
+
+                    <span class="profile-avatar">
+                        A
+                    </span>
+
+                    <span data-i18n="administrador">
+                        Administrador
+                    </span>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+
+                </button>
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <a
+                        href="#"
+                        class="logout-button profile-logout"
+                        data-i18n="cerrarSesion"
+                    >
+                        Cerrar sesión
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ========================================= -->
+        <!-- CONTENIDO DE INCENTIVOS -->
+        <!-- ========================================= -->
+
+        <div class="pagina-incentivos">
+
+            <div class="reportes-header">
+
+                <div>
+
+                    <h1
+                        id="tituloIncentivos"
+                        data-i18n="incentivos"
+                    >
+                        Incentivos
+                    </h1>
+
+                    <p
+                        id="descripcionIncentivos"
+                        data-i18n="gestionIncentivos"
+                    >
+                        Gestión de incentivos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- NUEVO INCENTIVO -->
+            <!-- ================================= -->
+
+            <section class="reportes-card">
+
+                <h2
+                    id="tituloNuevoIncentivo"
+                    data-i18n="nuevoIncentivo"
+                >
+                    Nuevo incentivo
+                </h2>
+
+                <form id="incentivoForm">
+
+                    <div class="form-group">
+
+                        <label
+                            for="empleadoIncentivo"
+                            data-i18n="empleado"
+                        >
+                            Empleado
+                        </label>
+
+                        <select
+                            id="empleadoIncentivo"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                data-i18n="seleccionarEmpleado"
+                            >
+                                Seleccionar empleado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="nominaIncentivo"
+                            data-i18n="periodoNomina"
+                        >
+                            Período de nómina
+                        </label>
+
+                        <select
+                            id="nominaIncentivo"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                data-i18n="seleccionarNomina"
+                            >
+                                Seleccionar período
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="montoIncentivo"
+                            data-i18n="montoIncentivo"
+                        >
+                            Monto del incentivo
+                        </label>
+
+                        <input
+                            type="number"
+                            id="montoIncentivo"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="0.00"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="descripcionIncentivo"
+                            data-i18n="descripcionIncentivo"
+                        >
+                            Descripción
+                        </label>
+
+                        <textarea
+                            id="descripcionIncentivo"
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-guardar"
+                        id="btnGuardarIncentivo"
+                        data-i18n="guardarIncentivo"
+                    >
+                        Guardar incentivo
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-cancelar-edicion"
+                        id="btnCancelarEdicionIncentivo"
+                        style="display: none;"
+                        data-i18n="cancelarEdicionIncentivo"
+                    >
+                        Cancelar
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================================= -->
+            <!-- INCENTIVOS REGISTRADOS -->
+            <!-- ================================= -->
+
+            <section
+                class="reportes-card"
+                style="margin-top: 24px;"
+            >
+
+                <h2 data-i18n="incentivosRegistrados">
+                    Incentivos registrados
+                </h2>
+
+                <div id="listaIncentivos">
+
+                    <div
+                        class="reporte-sin-resultados"
+                        data-i18n="sinIncentivos"
+                    >
+                        No hay incentivos registrados para este período.
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="/js/lang.js"></script>
+
+    <script src="/js/logout.js"></script>
+
+    <script src="/js/incentivos.js"></script>
+
+</body>
+
+</html>

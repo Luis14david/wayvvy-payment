@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Usuarios</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/usuarios.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+
+            <a href="/html/dashboard.html" data-i18n="dashboard">
+                Dashboard
+            </a>
+
+            <a href="/html/empleados.html" data-i18n="empleados">
+                Empleados
+            </a>
+
+            <a
+                href="/html/nomina.html"
+                class="active"
+                aria-current="page"
+                data-i18n="nomina"
+            >
+                Nómina
+            </a>
+
+            <a href="/html/asistencia.html" data-i18n="asistencia">
+                Asistencia
+            </a>
+
+            <a href="/html/incentivos.html" data-i18n="incentivos">
+                Incentivos
+            </a>
+
+            <a href="/html/reportes.html" data-i18n="reportes">
+                Reportes
+            </a>
+
+            <a href="/html/puestos.html" data-i18n="puestos">
+                Puestos
+            </a>
+
+            <a href="/html/configuracion.html" data-i18n="configuracion">
+                Configuración
+            </a>
+
+            <div class="language-switch">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('es')"
+                >
+                    ES
+                </button>
+
+                <span>|</span>
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('en')"
+                >
+                    EN
+                </button>
+
+            </div>
+
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button
+                    type="button"
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    <span class="profile-avatar">
+                        A
+                    </span>
+
+                    <span data-i18n="administrador">
+                        Administrador
+                    </span>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+                </button>
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+                    <a href="#" class="profile-option">
+                        Mi perfil
+                    </a>
+
+                    <a
+                        href="#"
+                        class="logout-button profile-logout"
+                        data-i18n="cerrarSesion"
+                    >
+                        Cerrar sesión
+                    </a>
+                </div>
+
+            </div>
+
+        </header>
+
+
+                <section class="usuarios-panel">
+<h1>Usuarios</h1>
+<form id="usuariosForm" class="usuarios-card" autocomplete="off">
+
+    <h2>Crear usuario</h2>
+
+    <label for="empleadoUsuario">
+        Empleado
+    </label>
+
+    <select id="empleadoUsuario" required>
+        <option value="">
+            Seleccione un empleado...
+        </option>
+    </select>
+
+
+    <label for="nuevoUsuario">
+        Usuario
+    </label>
+
+    <input
+    id="nuevoUsuario"
+    type="text"
+    autocomplete="off"
+    required
+    minlength="3"
+    maxlength="50"
+>
+
+
+    <label for="passwordUsuario">
+        Contraseña
+    </label>
+
+    <input
+    id="passwordUsuario"
+    type="password"
+    autocomplete="new-password"
+    required
+    minlength="10"
+    maxlength="128"
+>
+
+
+    <label for="rolUsuario">
+        Rol
+    </label>
+
+    <select id="rolUsuario" required>
+        <option value="viewer">
+            Viewer
+        </option>
+
+        <option value="manager">
+            Manager
+        </option>
+
+        <option value="admin">
+            Admin
+        </option>
+    </select>
+
+
+    <button type="submit">
+        Crear usuario
+    </button>
+
+</form>
+<p id="mensaje" role="status"></p>
+<div class="usuarios-card"><h2>Usuarios registrados</h2><table><thead><tr><th>Usuario</th><th>Rol</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="usuariosBody"></tbody></table></div>
+</section>
+</main>
+
+
+
+
+
+
+
+
+
+<script src="/js/lang.js"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/script.js"></script>
+</body>
+
+</html>

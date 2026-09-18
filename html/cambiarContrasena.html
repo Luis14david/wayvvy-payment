@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayvvy Payments - Cambiar contraseña</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/cambiarContrasena.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <img src="/Images/logo-wayvvy.png"
+             alt="Logo Wayvvy Payments"
+             class="logo">
+
+        <form class="login-form" id="cambiarPasswordForm">
+
+            <h2>Cambiar contraseña</h2>
+
+            <label for="passwordActual">Contraseña actual</label>
+
+            <div class="input-container">
+                <input type="password" id="passwordActual" autocomplete="current-password" required maxlength="128">
+                <span class="error-icon" id="errorPasswordActual">!</span>
+            </div>
+
+
+            <label for="nuevaPassword">Nueva contraseña</label>
+
+            <div class="input-container">
+                <input type="password" id="nuevaPassword" autocomplete="new-password" required minlength="10" maxlength="128">
+                <span class="error-icon" id="errorNuevaPassword">!</span>
+            </div>
+
+
+            <label for="confirmarPassword">Confirmar nueva contraseña</label>
+
+            <div class="input-container">
+                <input type="password" id="confirmarPassword" autocomplete="new-password" required minlength="10" maxlength="128">
+                <span class="error-icon" id="errorConfirmarPassword">!</span>
+            </div>
+
+
+            <button type="submit" >Cambiar contraseña</button>
+
+            <p id="mensaje" role="status"></p>
+
+        <a href="/html/configuracion.html" class="volver">Volver</a>
+        </form>
+
+        <div class="language-switch" style="max-width:180px;margin:20px auto">
+    <button type="button" class="language-button" onclick="cambiarIdioma('es')">ES</button>
+    <span>|</span>
+    <button type="button" class="language-button" onclick="cambiarIdioma('en')">EN</button>
+</div>
+
+    </div>
+
+    <script src="/js/lang.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>
