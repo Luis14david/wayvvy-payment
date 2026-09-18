@@ -1,0 +1,19 @@
+.usuarios-panel { padding: 28px; color: #eee; }
+.usuarios-card { background: #111; border: 1px solid #292929; border-radius: 12px; padding: 24px; margin: 24px 0; overflow-x: auto; }
+#usuariosForm { max-width: 520px; display: grid; gap: 12px; }
+.usuarios-panel input,.usuarios-panel select { padding: 12px; color: #fff; background: #191919; border: 1px solid #333; border-radius: 8px; }
+.usuarios-panel button { padding: 12px 18px; background: linear-gradient(90deg,#9ddb20,#28b8d5); border: 0; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.usuarios-panel button:disabled { opacity: .5; cursor: default; }
+.usuarios-panel table { width: 100%; border-collapse: collapse; }
+.usuarios-panel th,.usuarios-panel td { text-align: left; padding: 14px; border-bottom: 1px solid #292929; }
+.usuarios-panel th { color: #aab6c2; }
+#usuariosBody .btn-cambiar-clave {float: right; margin-left: 16px;}
+/* Acción de borrar, separada de editar y activar/desactivar. */
+#usuariosBody .btn-borrar-usuario {
+    margin-left: 12px;
+    background: #662828;
+    color: #fff;
+}
+#usuariosBody .btn-borrar-usuario:hover:not(:disabled) {
+    background: #893535;
+}
