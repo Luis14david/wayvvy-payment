@@ -1,0 +1,207 @@
+/*
+   Los estilos base se encuentran en common.css.
+   Este espaciado corresponde a la página sin sidebar.
+*/
+
+body:has(.employee-form):not(:has(.sidebar)) {
+    background-color: #020202;
+
+    padding: 80px 20px 40px;
+}
+
+.employee-form {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px 25px;
+
+    background-color: #111111;
+
+    padding: 35px;
+
+    border: 1px solid #222222;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.45);
+}
+
+.employee-form .form-group {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.employee-form .form-group label {
+    margin-bottom: 7px;
+
+    color: #cccccc;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.employee-form .input-container {
+    position: relative;
+
+    min-width: 0;
+}
+
+.employee-form .input-container input,
+.employee-form .input-container select {
+    width: 100%;
+    min-width: 0;
+
+    padding: 14px 16px;
+
+    background-color: #181818;
+    color: white;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.employee-form .input-container input:focus,
+.employee-form .input-container select:focus {
+    border-color: #55d6c2;
+
+    box-shadow:
+        0 0 5px #55d6c2,
+        0 0 12px rgba(85, 214, 194, 0.25);
+}
+
+.employee-form .input-container input::placeholder {
+    color: #666666;
+}
+
+/* =========================
+   BOTONES DEL FORMULARIO
+========================= */
+
+.employee-form .form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+/* Cancelar */
+
+.employee-form .btn-cancelar {
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    background-color: #d93636;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.employee-form .btn-cancelar:hover {
+    background-color: #ef4444;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+
+/* Agregar empleado */
+
+.employee-form .btn-agregar {
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: #080808;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.employee-form .btn-agregar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 8px #9DDB20,
+        0 0 16px rgba(40, 184, 213, 0.4);
+}
+
+@media (max-width: 700px) {
+
+    .employee-form {
+        grid-template-columns: 1fr;
+
+        padding: 25px 20px;
+    }
+
+    .employee-form button {
+        grid-column: 1;
+    }
+}
+
+.employee-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* =========================================
+   SELECTOR DE IDIOMA - FORMULARIO EMPLEADO
+   ========================================= */
+
+/*
+   Las reglas de .employee-language-switch
+   y .idioma-activo están en common.css.
+*/
+/* Historial de tarifas por hora */
+.employee-form [hidden] { display: none; }
+.employee-form .historial-tarifas { grid-column: 1 / -1; min-width: 0; }
+.historial-tarifas h2 { font-size: 18px; color: #f4f4f4; }
+.historial-tarifas p { color: #bbbbbb; line-height: 1.5; }
+.tabla-tarifas { overflow-x: auto; }
+.tabla-tarifas table { border-collapse: collapse; width: 100%; color: #eeeeee; }
+.tabla-tarifas th, .tabla-tarifas td { padding: 12px; border-bottom: 1px solid #333333; text-align: left; }
+.tabla-tarifas th { color: #aaaaaa; }
+.employee-form input:read-only { color: #aaaaaa; }
+.employee-form .btn-agregar:disabled { opacity: 0.5; cursor: default; transform: none; }

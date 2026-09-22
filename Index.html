@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Iniciar sesión</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <img
+            src="/Images/logo-wayvvy.png"
+            alt="Logo Wayvvy Payments"
+            class="logo"
+        >
+
+        <form class="login-form" id="loginForm" autocomplete="off">
+
+            <label for="usuario">
+                Usuario
+            </label>
+
+            <div class="input-container">
+
+                <input
+                    type="text"
+                    id="usuario"
+                    autocomplete="off"
+                >
+
+                <span class="error-icon" id="errorUsuario">
+                    !
+                </span>
+
+            </div>
+
+
+            <label for="password">
+                Contraseña
+            </label>
+
+            <div class="input-container">
+
+                <input
+                    type="password"
+                    id="password"
+                    autocomplete="off"
+                >
+
+                <span class="error-icon" id="errorPassword">
+                    !
+                </span>
+
+            </div>
+
+
+            <a href="#" class="forgot-password">
+                ¿Olvidaste tu contraseña?
+            </a>
+
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+            <p id="mensaje" aria-live="polite"></p>
+
+        </form>
+
+        <div class="language-switch" style="max-width:180px;margin:20px auto">
+    <button type="button" class="language-button" onclick="cambiarIdioma('es')">ES</button>
+    <span>|</span>
+    <button type="button" class="language-button" onclick="cambiarIdioma('en')">EN</button>
+</div>
+
+    </div>
+
+
+    <script src="/js/lang.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>

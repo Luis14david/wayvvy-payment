@@ -1,2 +1,0 @@
-# wayvvy-payment
-Proyecto monografico

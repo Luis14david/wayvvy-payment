@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wayvvy Payroll - Nómina</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/nomina.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2>WPayroll</h2>
+
+        <nav>
+
+            <a href="/html/dashboard.html" data-i18n="dashboard">
+                Dashboard
+            </a>
+
+            <a href="/html/empleados.html" data-i18n="empleados">
+                Empleados
+            </a>
+
+            <a
+                href="/html/nomina.html"
+                class="active"
+                aria-current="page"
+                data-i18n="nomina"
+            >
+                Nómina
+            </a>
+
+            <a href="/html/asistencia.html" data-i18n="asistencia">
+                Asistencia
+            </a>
+
+            <a href="/html/incentivos.html" data-i18n="incentivos">
+                Incentivos
+            </a>
+
+            <a href="/html/reportes.html" data-i18n="reportes">
+                Reportes
+            </a>
+
+            <a href="/html/puestos.html" data-i18n="puestos">
+                Puestos
+            </a>
+
+            <a href="/html/configuracion.html" data-i18n="configuracion">
+                Configuración
+            </a>
+
+            <div class="language-switch">
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('es')"
+                >
+                    ES
+                </button>
+
+                <span>|</span>
+
+                <button
+                    type="button"
+                    class="language-button"
+                    onclick="cambiarIdioma('en')"
+                >
+                    EN
+                </button>
+
+            </div>
+
+            <a
+                href="#"
+                class="logout-button sidebar-logout"
+                data-i18n="cerrarSesion"
+            >
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="profile-menu">
+
+                <button
+                    type="button"
+                    class="profile-button"
+                    id="profileButton"
+                >
+                    <span class="profile-avatar">
+                        A
+                    </span>
+
+                    <span data-i18n="administrador">
+                        Administrador
+                    </span>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+                </button>
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+                    <a href="#" class="profile-option">
+                        Mi perfil
+                    </a>
+
+                    <a
+                        href="#"
+                        class="logout-button profile-logout"
+                        data-i18n="cerrarSesion"
+                    >
+                        Cerrar sesión
+                    </a>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="nomina-section">
+
+            <div class="nomina-header">
+
+                <div>
+                    <h1 data-i18n="nomina">
+                        Nómina
+                    </h1>
+
+                    <p>
+                        Gestión de períodos de nómina
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-nueva-nomina"
+                    id="btnNuevaNomina"
+                >
+                    + Nueva nómina
+                </button>
+
+            </div>
+
+
+            <div class="nomina-card">
+
+                <h2>
+                    Nóminas registradas
+                </h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Período</th>
+                            <th scope="col">Fecha inicio</th>
+                            <th scope="col">Fecha fin</th>
+                            <th scope="col" data-i18n="estado">
+                                Estado
+                            </th>
+                            <th scope="col" data-i18n="acciones">
+                                Acciones
+                            </th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="nominasBody">
+
+                        <tr>
+                            <td colspan="6">
+                                Cargando nóminas...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <dialog id="nuevaNominaDialog" class="nomina-dialog" aria-labelledby="tituloNuevaNomina">
+        <form id="nuevaNominaForm">
+            <h2 id="tituloNuevaNomina">Nueva nómina</h2>
+            <p>El período se guardará en estado Borrador.</p>
+            <label for="periodoInicioNomina">Inicio de la semana (lunes)</label>
+            <input type="date" id="periodoInicioNomina" name="periodo_inicio" min="1000-01-01" max="9999-12-31" required>
+            <label for="periodoFinNomina">Fin de la semana (domingo)</label>
+            <input type="date" id="periodoFinNomina" name="periodo_fin" min="1000-01-01" max="9999-12-31" readonly>
+            <label for="fechaPagoNomina">Fecha de pago</label>
+            <input type="date" id="fechaPagoNomina" name="fecha_pago" min="1000-01-01" max="9999-12-31" readonly>
+            <p>El pago se asigna al viernes siguiente a la semana trabajada. El año de la nómina corresponde a esa fecha de pago.</p>
+            <p id="mensajeNuevaNomina" role="status"></p>
+            <div class="nomina-form-actions">
+                <button type="button" id="cancelarNuevaNomina">Cancelar</button>
+                <button type="submit" id="guardarNuevaNomina" class="btn-nueva-nomina">Crear Nómina</button>
+            </div>
+        </form>
+    </dialog>
+    <script src="/js/lang.js"></script>
+    <script src="/js/fechasNomina.js"></script>
+    <script src="/js/nomina.js"></script>
+    <script src="/js/logout.js"></script>
+
+</body>
+
+</html>

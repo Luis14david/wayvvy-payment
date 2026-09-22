@@ -1,23 +1,24 @@
-body {
+body:has(.login-container) {
     background-color: black;
-    margin: 0;
-
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 .login-container {
     width: 350px;
+    max-width: 100%;
+
     text-align: center;
 }
 
-.logo {
+.login-container .logo {
     width: 300px;
+    max-width: 100%;
+
     height: auto;
     margin-bottom: 30px;
 }
@@ -34,6 +35,8 @@ body {
 }
 
 .login-form input {
+    min-width: 0;
+
     padding: 14px 16px;
     margin-bottom: 10px;
 
@@ -43,6 +46,7 @@ body {
     border: 1px solid #333333;
     border-radius: 8px;
 
+    font-family: inherit;
     font-size: 16px;
     outline: none;
 
@@ -71,6 +75,7 @@ body {
 
     color: black;
 
+    font-family: inherit;
     font-size: 16px;
     font-weight: bold;
 
@@ -87,17 +92,18 @@ body {
         0 0 18px rgba(40, 184, 213, 0.5);
 }
 
-.input-container {
+.login-container .input-container {
     position: relative;
     width: 100%;
 }
 
-.input-container input {
+.login-container .input-container input {
     width: 100%;
-    box-sizing: border-box;
+
+    padding-right: 40px;
 }
 
-.error-icon {
+.login-container .error-icon {
     display: none;
 
     position: absolute;
@@ -109,10 +115,26 @@ body {
     font-weight: bold;
 }
 
-.input-error {
+.login-container .input-error {
     border-color: red !important;
 
     box-shadow:
         0 0 5px red,
         0 0 10px rgba(255, 0, 0, 0.3) !important;
+}
+
+.login-container .forgot-password {
+    color: #28B8D5;
+    text-decoration: none;
+    font-size: 14px;
+
+    text-align: right;
+    margin-bottom: 20px;
+
+    transition: 0.3s;
+}
+
+.login-container .forgot-password:hover {
+    color: #9DDB20;
+    text-decoration: underline;
 }

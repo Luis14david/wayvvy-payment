@@ -1,0 +1,142 @@
+{
+  "esquema": [
+    {
+      "Table": "asistencia",
+      "Create Table": "CREATE TABLE `asistencia` (\n  `id_asistencia` int(11) NOT NULL AUTO_INCREMENT,\n  `id_empleado` int(11) NOT NULL,\n  `fecha` date NOT NULL,\n  `hora_entrada` time DEFAULT NULL,\n  `hora_salida` time DEFAULT NULL,\n  `horas_trabajadas` decimal(5,2) DEFAULT NULL,\n  `horas_extras` decimal(5,2) DEFAULT NULL,\n  `estado` enum('Presente','Ausente','Tardanza','Permiso') NOT NULL,\n  `observacion` varchar(255) DEFAULT NULL,\n  PRIMARY KEY (`id_asistencia`),\n  UNIQUE KEY `uq_asistencia_empleado_fecha` (`id_empleado`,`fecha`),\n  KEY `fk_id_empleado` (`id_empleado`),\n  CONSTRAINT `fk_id_empleado` FOREIGN KEY (`id_empleado`) REFERENCES `empleados` (`id_empleado`)\n) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    }
+  ],
+  "filas": [
+    {
+      "id_asistencia": 31,
+      "id_empleado": 7,
+      "fecha": "2026-08-24T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "3.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 32,
+      "id_empleado": 7,
+      "fecha": "2026-08-25T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 33,
+      "id_empleado": 7,
+      "fecha": "2026-08-26T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 34,
+      "id_empleado": 7,
+      "fecha": "2026-08-27T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 35,
+      "id_empleado": 7,
+      "fecha": "2026-08-28T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "4.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 36,
+      "id_empleado": 7,
+      "fecha": "2026-08-29T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "0.00",
+      "horas_extras": "1.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 68,
+      "id_empleado": 2,
+      "fecha": "2026-08-24T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 69,
+      "id_empleado": 2,
+      "fecha": "2026-08-25T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 70,
+      "id_empleado": 2,
+      "fecha": "2026-08-26T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 71,
+      "id_empleado": 2,
+      "fecha": "2026-08-27T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "8.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 72,
+      "id_empleado": 2,
+      "fecha": "2026-08-28T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "3.00",
+      "horas_extras": "0.00",
+      "estado": "Presente",
+      "observacion": null
+    },
+    {
+      "id_asistencia": 73,
+      "id_empleado": 2,
+      "fecha": "2026-08-29T05:00:00.000Z",
+      "hora_entrada": null,
+      "hora_salida": null,
+      "horas_trabajadas": "0.00",
+      "horas_extras": "5.00",
+      "estado": "Presente",
+      "observacion": null
+    }
+  ]
+}
