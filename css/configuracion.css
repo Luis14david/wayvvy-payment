@@ -1,0 +1,91 @@
+/* Contenido principal */
+
+/*
+   El layout, el sidebar y el perfil
+   se encuentran en common.css.
+*/
+
+.dashboard-content h1 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+
+.dashboard-content p {
+    color: #aaaaaa;
+}
+
+
+.change-photo-button {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 18px;
+
+    background: linear-gradient(
+        135deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: #080808;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+.settings-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px;}
+.settings-card {min-width:0;padding:24px;background:#11141b;border:1px solid #242832;border-radius:12px;}
+.settings-card h2 {margin:0 0 24px;font-size:22px;}
+.settings-avatar {width:112px;height:112px;border-radius:50%;object-fit:cover;margin-bottom:24px;}
+span.settings-avatar {display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#9ddb20,#28b8d5);font-size:40px;color:#111;}
+.settings-avatar[hidden] {display:none;}
+.settings-form {display:flex;flex-direction:column;gap:12px;}
+.settings-form input {box-sizing:border-box;width:100%;min-width:0;padding:12px;border:1px solid #444;border-radius:8px;background:#181818;color:white;}
+.settings-form button {padding:12px;border:0;border-radius:8px;background:linear-gradient(135deg,#9ddb20,#28b8d5);color:#080808;font-weight:bold;cursor:pointer;}
+.settings-form button:disabled {opacity:0.5;cursor:default;}
+.settings-form input:focus-visible,.settings-form button:focus-visible {outline:2px solid #9ddb20;outline-offset:3px;}
+.settings-form .error-icon {display:none;}
+.settings-form p {margin:0;overflow-wrap:anywhere;}
+@media(max-width:750px){.settings-grid{grid-template-columns:1fr;}}
+
+#panelTasas[hidden] {display:none;}
+#panelTasas {margin-top:24px;}
+#panelTasas > summary {display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;}
+#panelTasas > summary::-webkit-details-marker {display:none;}
+#panelTasas > summary h2 {margin:0;}
+#panelTasas > summary:focus-visible {outline:2px solid #9ddb20;outline-offset:6px;border-radius:4px;}
+#panelTasas[open] > summary {margin-bottom:24px;}
+.tasas-flecha {font-size:24px;line-height:1;transition:transform .15s;}
+#panelTasas[open] .tasas-flecha {transform:rotate(180deg);}
+.configuracion-domingo {padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid #242832;}
+.configuracion-domingo label {display:flex;align-items:center;gap:10px;cursor:pointer;}
+.configuracion-domingo input {width:18px;height:18px;accent-color:#9ddb20;}
+.configuracion-domingo p {font-size:13px;line-height:1.5;}
+.configuracion-domingo input:focus-visible {outline:2px solid #9ddb20;outline-offset:3px;}
+.tasas-campos {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.tasas-campos label {display:flex;flex-direction:column;gap:8px;}
+.tasas-historial {overflow:auto;margin-top:24px;}
+.tasas-historial table {width:100%;border-collapse:collapse;}
+.tasas-historial td,.tasas-historial th {padding:12px;text-align:left;border-bottom:1px solid #444;}
+.tasas-detalle {white-space:pre-line;}
+@media(max-width:750px){.tasas-campos{grid-template-columns:1fr;}}
+
+
+/* Tasas ordenadas por concepto; entradas compactas y motivo amplio. */
+#tasasForm { gap:16px; }
+#tasasForm .tasas-campos { grid-template-columns:repeat(3,minmax(0,220px));gap:12px 16px; }
+#tasasForm .tasas-seguro { grid-template-columns:repeat(2,minmax(0,220px)); }
+#tasasForm .tasas-fecha { grid-template-columns:minmax(0,220px); }
+#tasasForm label { gap:5px;font-size:13px;justify-content:flex-end; }
+#tasasForm input {height:36px;padding:7px 10px;font-size:14px;border-radius:6px;}
+#tasasForm .tasas-tramo-final label:first-child {grid-column:2;}
+#tasasForm h3 {margin:8px 0 0;}
+#tasasForm .tasas-motivo {display:flex;flex-direction:column;width:100%;max-width:692px;}
+#tasasForm textarea {box-sizing:border-box;width:100%;min-height:85px;padding:10px;resize:vertical;border:1px solid #444;border-radius:6px;background:#181818;color:white;font:inherit;font-size:14px;}
+#tasasForm textarea:focus-visible {outline:2px solid #9ddb20;outline-offset:3px;}
+#tasasForm button {align-self:flex-start;padding:9px 16px;}
+@media(max-width:650px){
+    #tasasForm .tasas-campos {grid-template-columns:1fr;}
+    #tasasForm .tasas-tramo-final label:first-child {grid-column:auto;}
+}

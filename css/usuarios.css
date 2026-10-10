@@ -1,0 +1,32 @@
+.usuarios-panel { padding: 28px; color: #eee; }
+.usuarios-card { background: #111; border: 1px solid #292929; border-radius: 12px; padding: 24px; margin: 24px 0; overflow-x: auto; }
+#usuariosForm { max-width: 520px; display: grid; gap: 12px; }
+.usuarios-panel input,.usuarios-panel select { padding: 12px; color: #fff; background: #191919; border: 1px solid #333; border-radius: 8px; }
+.usuarios-panel button { padding: 12px 18px; background: linear-gradient(90deg,#9ddb20,#28b8d5); border: 0; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.usuarios-panel button:disabled { opacity: .5; cursor: default; }
+.usuarios-panel table { width: 100%; border-collapse: collapse; }
+.usuarios-panel th,.usuarios-panel td { text-align: left; padding: 14px; border-bottom: 1px solid #292929; }
+.usuarios-panel th { color: #aab6c2; }
+#usuariosBody .btn-cambiar-clave {float: right; margin-left: 16px;}
+/* Acción de borrar, separada de editar y activar/desactivar. */
+#usuariosBody .btn-borrar-usuario {
+    margin-left: 12px;
+    background: #662828;
+    color: #fff;
+}
+#usuariosBody .btn-borrar-usuario:hover:not(:disabled) {
+    background: #893535;
+}
+
+.dialogo-editar-usuario {background:#11141b;color:white;border:1px solid #444;border-radius:12px;padding:24px;width:min(640px,85vw);max-height:85vh;overflow:auto;}
+.dialogo-editar-usuario input:not([type="checkbox"]),.dialogo-editar-usuario select {background:#191919;color:#fff;border:1px solid #444;border-radius:8px;}
+.dialogo-editar-usuario button {padding:10px 16px;background:linear-gradient(90deg,#9ddb20,#28b8d5);border:0;border-radius:8px;cursor:pointer;margin:4px;}
+.dialogo-editar-usuario button:disabled {opacity:.5;cursor:default;}
+.dialogo-editar-usuario::backdrop {background:rgba(0,0,0,.65);}
+.permisos-usuario {border:1px solid #444;border-radius:8px;margin:18px 0;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.permisos-usuario>p,.permisos-usuario>button {grid-column:1/-1;}
+.permisos-usuario p[hidden] {display:none;}
+.permisos-grupo {display:flex;flex-direction:column;gap:8px;}
+.permisos-grupo label {display:flex;align-items:flex-start;gap:8px;font-size:14px;}
+.permisos-grupo input {accent-color:#9ddb20;flex-shrink:0;margin:3px 0;}
+@media(max-width:550px){.permisos-usuario{grid-template-columns:1fr;}}

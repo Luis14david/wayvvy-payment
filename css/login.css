@@ -1,0 +1,140 @@
+body:has(.login-container) {
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-container {
+    width: 350px;
+    max-width: 100%;
+
+    text-align: center;
+}
+
+.login-container .logo {
+    width: 300px;
+    max-width: 100%;
+
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-form label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    min-width: 0;
+
+    padding: 14px 16px;
+    margin-bottom: 10px;
+
+    background-color: #111111;
+    color: white;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #55d6c2;
+
+    box-shadow:
+        0 0 5px #55d6c2,
+        0 0 12px rgba(85, 214, 194, 0.4);
+}
+
+.login-form button {
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #9DDB20,
+        #28B8D5
+    );
+
+    color: black;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 8px #9DDB20,
+        0 0 18px rgba(40, 184, 213, 0.5);
+}
+
+.login-container .input-container {
+    position: relative;
+    width: 100%;
+}
+
+.login-container .input-container input {
+    width: 100%;
+
+    padding-right: 40px;
+}
+
+.login-container .error-icon {
+    display: none;
+
+    position: absolute;
+    right: 12px;
+    top: 14px;
+
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-container .input-error {
+    border-color: red !important;
+
+    box-shadow:
+        0 0 5px red,
+        0 0 10px rgba(255, 0, 0, 0.3) !important;
+}
+
+.login-container .forgot-password {
+    color: #28B8D5;
+    text-decoration: none;
+    font-size: 14px;
+
+    text-align: right;
+    margin-bottom: 20px;
+
+    transition: 0.3s;
+}
+
+.login-container .forgot-password:hover {
+    color: #9DDB20;
+    text-decoration: underline;
+}
